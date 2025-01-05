@@ -2,20 +2,23 @@
 <html>
     <head>
         <title>SVG Fundamentals</title>
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body>
-        <svg>
-            <rect x="0" y="0" width="150" height="100" fill="none" stroke="black"></rect>
-            <circle cx="50" cy="50" r="50" fill="red"></circle>
-            <circle cx="100" cy="50" r="50" fill="black"></circle>
-            <line x1="25" x2="125" y1="50" y2="50" stroke="white"></line>
-            <ellipse cx="75" cy="75" rx="20" ry="5" fill="none" stroke="white"></ellipse>
-            <polygon points="90,50 110,75 70,75" fill="none" stroke="white"></polygon>
+        <svg width="960" height="500">
         </svg>
         <script>
             console.log("Hello World");
             console.log(5);
-            console.log(5 + 5);
+        </script>
+        <script>
+            const svg = document.createElement('svg');
+            console.log(svg);
         </script>
     </body>
 </html>
