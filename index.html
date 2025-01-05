@@ -11,15 +11,21 @@
     </head>
     <body>
         <script>
-            const svg = document.createElement('svg');
+            const svg = document.createElementNS(
+                'http://www.w3.org/2000/svg',
+                'svg'
+            );
             svg.setAttribute("width", 960);
-            svg.setAttribute("heigh", 500);
+            svg.setAttribute("height", 500);
             document.body.appendChild(svg);
-            // console.log(svg);
-            // console.log("Hello World");
-            // console.log(5);
-            // const svg = document.createElement('svg');
-            // console.log(svg);
+
+            const rect = document.createElementNS(
+                'http://www.w3.org/2000/svg',
+                'svg'
+            );
+            rect.setAttribute("width", 100);
+            rect.setAttribute("height", 100);
+            document.body.appendChild(svg);
         </script>
     </body>
 </html>
