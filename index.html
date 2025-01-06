@@ -22,7 +22,24 @@
             svg.setAttribute("height", height);
             document.body.appendChild(svg);
 
-            const n = 21;
+            const mask = document.createElementNS(
+                'http://www.w3.org/2000/svg',
+                'mask'
+            );
+            mask.setAttribute("id", "circle-mask");
+            svg.appendChild(mask);
+
+            const circle = document.createElementNS(
+                'http://www.w3.org/2000/svg',
+                'circle'
+            );
+            circle.setAttribute("cx", width / 2);
+            circle.setAttribute("cy", height / 2);
+            circle.setAttribute("r", 200);
+            circle.setAttribute("fill", "white");
+            mask.appendChild(circle);
+
+            const n = 51;
             for (let i = 0; i < (n - 2); i++) {
                 const rect = document.createElementNS(
                     'http://www.w3.org/2000/svg',
@@ -31,6 +48,7 @@
                 rect.setAttribute("width", 10);
                 rect.setAttribute("height", height);
                 rect.setAttribute("x", (width * (1 / (n - 1))) + (i * width * (1 / (n - 1))))
+                rect.setAttribute("mask", "url(#circle-mask)");
                 svg.appendChild(rect);
             }
         </script>
